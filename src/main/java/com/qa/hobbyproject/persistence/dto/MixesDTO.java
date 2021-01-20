@@ -1,28 +1,17 @@
-package com.qa.hobbyproject.persistence.domain;
+package com.qa.hobbyproject.persistence.dto;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
-
-public class Mixes {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+public class MixesDTO {
+	
 	private Long Id;
-
-	@NotNull
 	private String mixName;
-
-	@NotNull
 	private Double mixLength;
 
-	public Mixes() {
+	public MixesDTO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Mixes(Long id, @NotNull String mixName, @NotNull Double mixLength) {
+	public MixesDTO(Long id, String mixName, Double mixLength) {
 		super();
 		Id = id;
 		this.mixName = mixName;
@@ -57,5 +46,4 @@ public class Mixes {
 	public String toString() {
 		return "Mixes [Id=" + Id + ", mixName=" + mixName + ", mixLength=" + mixLength + "]";
 	}
-
 }
