@@ -42,7 +42,6 @@ public class MixesService {
 	public List<MixesDTO> readAll() {
 		List<Mixes> mixList = this.repo.findAll();
 		List<MixesDTO> mixListDTO = mixList.stream().map(this::mapToDTO).collect(Collectors.toList());
-
 		return mixListDTO;
 	}
 
@@ -58,5 +57,4 @@ public class MixesService {
 		this.repo.deleteById(Id);
 		return !this.repo.existsById(Id);
 	}
-
 }
