@@ -40,8 +40,8 @@ public class TracksService {
 	}
 
 	public List<TracksDTO> readAll() {
-		List<Tracks> trackList = this.repo.findAll();
-		List<TracksDTO> trackListDTO = trackList.stream().map(this::mapToDTO).collect(Collectors.toList());
+		List<Tracks> trackLists = this.repo.findAll();
+		List<TracksDTO> trackListDTO = trackLists.stream().map(this::mapToDTO).collect(Collectors.toList());
 		return trackListDTO;
 	}
 

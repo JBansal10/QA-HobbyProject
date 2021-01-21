@@ -15,7 +15,7 @@ public class MixesDTO {
 		// TODO Auto-generated constructor stub
 	}
 
-	public MixesDTO(Long id, String mixName, Time mixLength, List<TracksDTO> trackList) {
+	public MixesDTO(Long id, Time mixLength, String mixName, List<TracksDTO> trackList) {
 		super();
 		Id = id;
 		this.mixName = mixName;
@@ -57,7 +57,7 @@ public class MixesDTO {
 
 	@Override
 	public String toString() {
-		return "MixesDTO [Id=" + Id + ", mixName=" + mixName + ", mixLength=" + mixLength + ", trackList=" + trackList
+		return "MixesDTO [Id=" + Id + ", mixLength=" + mixLength + ", mixName=" + mixName + ", trackList=" + trackList
 				+ "]";
 	}
 }

@@ -39,8 +39,8 @@ public class Mixes {
 	public Mixes(Long id, String mixName, Time mixLength, List<Tracks> trackList) {
 		super();
 		Id = id;
-		this.mixName = mixName;
 		this.mixLength = mixLength;
+		this.mixName = mixName;
 		this.trackList = trackList;
 	}
 
@@ -78,7 +78,7 @@ public class Mixes {
 
 	@Override
 	public String toString() {
-		return "Mixes [Id=" + Id + ", mixName=" + mixName + ", mixLength=" + mixLength + ", trackList=" + trackList
+		return "Mixes [Id=" + Id + ", mixLength=" + mixLength + ", mixName=" + mixName + ", trackList=" + trackList
 				+ "]";
 	}
 
