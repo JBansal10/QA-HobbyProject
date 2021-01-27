@@ -41,8 +41,8 @@ public class TrackController {
 	}
 
 	@PostMapping("/create")
-	public ResponseEntity<TracksDTO> create(@RequestBody Tracks track) {
-		return new ResponseEntity<TracksDTO>(this.service.create(track), HttpStatus.CREATED);
+	public ResponseEntity<TracksDTO> create(@RequestBody Tracks tracks) {
+		return new ResponseEntity<TracksDTO>(this.service.create(tracks), HttpStatus.CREATED);
 	}
 
 	@PutMapping("/update/{Id}")
