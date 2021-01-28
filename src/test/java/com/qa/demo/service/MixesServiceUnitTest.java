@@ -12,6 +12,8 @@ import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.jdbc.Sql;
+import org.springframework.test.context.jdbc.Sql.ExecutionPhase;
 
 import com.qa.hobbyproject.HobbyProjectApplication;
 import com.qa.hobbyproject.persistence.domain.Mixes;
@@ -20,6 +22,7 @@ import com.qa.hobbyproject.persistence.repos.MixesRepo;
 import com.qa.hobbyproject.services.MixesService;
 
 @SpringBootTest(classes = HobbyProjectApplication.class)
+@Sql(scripts = { "classpath:schema-test.sql" ,"classpath:data-test.sql" }, executionPhase = ExecutionPhase.BEFORE_TEST_METHOD)
 public class MixesServiceUnitTest {
 
 	@Autowired
@@ -82,17 +85,17 @@ public class MixesServiceUnitTest {
 
 	@Test
 	public void updateTest() {
-		this.Id = 1L;
-		Time updateTime = Time.valueOf("00:58:21");
+		//this.Id = 1L;
+		Time updateTime = Time.valueOf("00:57:39");
+		
+		Mixes domainUpdate = new Mixes(1L, "Re-Mix number 1", updateTime, null);
+		domainUpdate.setId(1L);
 
-		Mixes domainUpdate = new Mixes(Id, "Re-Mix number 1", updateTime, null);
-		domainUpdate.setId(Id);
-
-		MixesDTO updatedMixDTO = new MixesDTO(Id, time, "Re-Mix number 1", null);
-		this.mixTest.setId(Id);
+		MixesDTO updatedMixDTO = new MixesDTO(1L, time, "Re-Mix number 1", null);
+		this.mixTest.setId(1L);
 
 		Mockito.when(this.repoMock.findById(1L)).thenReturn(Optional.of(this.mixTest));
-		Mockito.when(this.repoMock.save(domainUpdate)).thenReturn(domainUpdate);
+		Mockito.when(this.repoMock.save(Mockito.any(Mixes.class))).thenReturn(domainUpdate);
 
 		MixesDTO result = this.service.update(1L, domainUpdate);
 

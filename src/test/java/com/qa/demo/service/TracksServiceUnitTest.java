@@ -85,7 +85,7 @@ public class TracksServiceUnitTest {
 		TracksDTO updatedDTO = new TracksDTO(1L, time, "Track Artist", "Track Name");
 
 		Mockito.when(this.repoMock.findById(Id)).thenReturn(Optional.of(trackTest));
-		Mockito.when(this.repoMock.save(updatedTrack)).thenReturn(updatedTrack);
+		Mockito.when(this.repoMock.save(Mockito.any(Tracks.class))).thenReturn(updatedTrack);
 
 		TracksDTO result = this.service.update(Id, updatedTrack);
 
