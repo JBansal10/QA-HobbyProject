@@ -14,9 +14,9 @@ public class TracksDTO {
 		// TODO Auto-generated constructor stub
 	}
 
-	public TracksDTO(Long id, Time trackLength, String trackArtist, String trackName) {
+	public TracksDTO(Long Id, Time trackLength, String trackArtist, String trackName) {
 		super();
-		Id = id;
+		this.Id = Id;
 		this.trackLength = trackLength;
 		this.trackArtist = trackArtist;
 		this.trackName = trackName;
@@ -27,8 +27,8 @@ public class TracksDTO {
 		return Id;
 	}
 
-	public void setId(Long id) {
-		Id = id;
+	public void setId(Long Id) {
+		this.Id = Id;
 	}
 
 	public String getTrackName() {

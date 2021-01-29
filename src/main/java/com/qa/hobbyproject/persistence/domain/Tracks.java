@@ -33,9 +33,9 @@ public class Tracks {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Tracks(Long id, Time trackLength, String trackName, String trackArtist, Mixes mixes) {
+	public Tracks(Long Id, Time trackLength, String trackName, String trackArtist, Mixes mixes) {
 		super();
-		Id = id;
+		this.Id = Id;
 		this.trackLength = trackLength;
 		this.trackName = trackName;
 		this.trackArtist = trackArtist;
@@ -47,8 +47,8 @@ public class Tracks {
 		return Id;
 	}
 
-	public void setId(Long id) {
-		Id = id;
+	public void setId(Long Id) {
+		this.Id = Id;
 	}
 
 	public String getTrackName() {
